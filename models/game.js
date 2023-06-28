@@ -9,9 +9,7 @@ ESRB: String,
 devTeam: String,
 consoleExclusive: Boolean,
 console: String,
-outNow: Boolean,
-},{
-timestamps: true
+outNow: Boolean
 });
 
 module.exports = mongoose.model('Game', gameSchema);
