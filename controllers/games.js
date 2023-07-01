@@ -26,10 +26,6 @@ function newGame(req, res){
 async function create(req, res) {
 // convert outNow checkbox of nothing or ''on'' to boolean //
 req.body.outNow = !!req.body.outNow;
-//remove any white space at start and end of cast//
-req.body.cast = req.body.cast.trim();
-//split cast into an array if it's not an empty string//
-    if (req.body.cast) req.body.cast = req.body.cast.split(/\s*,\s*/);
         try {
             await Game.create(req.body);
             res.redirect('/games');

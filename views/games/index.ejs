@@ -19,7 +19,8 @@
             <td><%= g.title %></td>
             <td><%= g.releaseYear %></td>
             <td><%= g.ESRB %></td>
-            <td><%= g.cast.join(', ') %></td>
+            <td><%= g.devTeam %></td>
+            <td><%= g.console %></td>
             <td><%= g.outNow ? 'Yes' : 'No'  %></td>
         </tr>
     <% }) %>
@@ -27,4 +28,4 @@
   </tbody>
 </table>
 
-<%- include('../partials/header') %>
+<%- include('../partials/footer') %>
