@@ -13,3 +13,4 @@ outNow: Boolean
 });
 
 module.exports = mongoose.model('Game', gameSchema);
+

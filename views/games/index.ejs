@@ -13,14 +13,14 @@
     </tr>
   </thead>
   <tbody>
-    <% movies.forEach(function(m) { %>
+    <% games.forEach(function(g) { %>
 
         <tr>
-            <td><%= m.title %></td>
-            <td><%= m.releaseYear %></td>
-            <td><%= m.mpaaRating %></td>
-            <td><%= m.cast.join(', ') %></td>
-            <td><%= m.nowShowing ? 'Yes' : 'No'  %></td>
+            <td><%= g.title %></td>
+            <td><%= g.releaseYear %></td>
+            <td><%= g.ESRB %></td>
+            <td><%= g.cast.join(', ') %></td>
+            <td><%= g.outNow ? 'Yes' : 'No'  %></td>
         </tr>
     <% }) %>
     <!-- Close the forEach using EJS here -->
