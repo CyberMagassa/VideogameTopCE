@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <h1>SHOW Game Page</h1>
+    <h2>Games List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Release Year</th>
+      <th>ESRB</th>
+      <th>Developer</th>
+      <th>Console</th>
+      <th>Out Now</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% games.forEach(function(g) { %>
+
+        <tr>
+            <td><%= g.title %></td>
+            <td><%= g.releaseYear %></td>
+            <td><%= g.ESRB %></td>
+            <td><%= g.devTeam %></td>
+            <td><%= g.console %></td>
+            <td><%= g.outNow ? 'Yes' : 'No'  %></td>
+
+            <td><a href="/games/<%= games._id %>/edit">Edit</a></td>
+      <td>
+        <form method="POST" action="/games/<%= games._id %>?_method=DELETE" onsubmit="return confirm('Are you sure you want to delete this game?');">
+          <button type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+        </tr>
+    <% }) %>
+    <!-- Close the forEach using EJS here -->
+  </tbody>
+</table>
+</body>
+</html>

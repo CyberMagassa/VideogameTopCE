@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<h3>Edit Game</h3>
+
+<form method="POST" action="/games/<%= game._id %>?_method=PUT">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" value="<%= game.title %>">
+
+  <label for="releaseYear">Release Year:</label>
+  <input type="number" id="releaseYear" name="releaseYear" value="<%= game.releaseYear %>">
+
+  <label for="ESRB">ESRB Rating:</label>
+  <select id="ESRB" name="ESRB">
+    <option value="E" <%= game.ESRB === 'E' ? 'selected' : '' %>>E</option>
+    <option value="E10" <%= game.ESRB === 'E10' ? 'selected' : '' %>>E10</option>
+    <option value="T" <%= game.ESRB === 'T' ? 'selected' : '' %>>Teen</option>
+    <option value="M" <%= game.ESRB === 'M' ? 'selected' : '' %>>Mature</option>
+  </select>
+
+  <label for="console">Console:</label>
+  <input type="text" id="console" name="console" value="<%= game.console %>">
+
+  <label for="devTeam">Development Team:</label>
+  <input type="text" id="devTeam" name="devTeam" value="<%= game.devTeam %>">
+
+  <label for="outNow">Out Now:</label>
+  <input type="checkbox" id="outNow" name="outNow" <%= game.outNow ? 'checked' : '' %>>
+
+  <button type="submit">Update Game</button>
+</form>
+
+<%- include('../partials/footer') %>

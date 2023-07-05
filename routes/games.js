@@ -17,5 +17,14 @@ router.post('/', gamesCtrl.create);
 //Get route for games INDEX
 router.get('/', gamesCtrl.index);
 
+// Get Games route/:id
+
+router.get('/:id', gamesCtrl.show);
+
+// PUT /games/:id
+router.put('/:id/edit', gamesCtrl.edit);
+
+
+
 
 module.exports = router;
