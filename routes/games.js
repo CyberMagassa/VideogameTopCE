@@ -1,30 +1,23 @@
 const express = require('express');
 const router = express.Router();
-
-// You'll be creating this controller module next
 const gamesCtrl = require('../controllers/games');
-	
-//Get Route for new games //
+
+// Get route for new games
 router.get('/new', gamesCtrl.new);
-	
 
-//All Routes default to games //
+// Get route for editing a game
+router.get('/:id/edit', gamesCtrl.edit);
 
-
-// POST route for games
-router.post('/', gamesCtrl.create);
-
-//Get route for games INDEX
-router.get('/', gamesCtrl.index);
-
-// Get Games route/:id
-
+// Get route for a specific game
 router.get('/:id', gamesCtrl.show);
 
-// PUT /games/:id
-router.put('/:id/edit', gamesCtrl.edit);
+// Get route for games index
+router.get('/', gamesCtrl.index);
 
+// POST route for creating a new game
+router.post('/', gamesCtrl.create);
 
-
+// PUT route for updating a game
+router.put('/:id', gamesCtrl.update);
 
 module.exports = router;

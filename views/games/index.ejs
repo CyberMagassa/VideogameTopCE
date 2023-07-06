@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 
-
 <h2>Games List</h2>
 <table>
   <thead>
@@ -11,21 +10,23 @@
       <th>Developer</th>
       <th>Console</th>
       <th>Out Now</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% games.forEach(function(g) { %>
-
-        <tr>
-            <td><%= g.title %></td>
-            <td><%= g.releaseYear %></td>
-            <td><%= g.ESRB %></td>
-            <td><%= g.devTeam %></td>
-            <td><%= g.console %></td>
-            <td><%= g.outNow ? 'Yes' : 'No'  %></td>
-        </tr>
+      <tr>
+        <td><%= g.title %></td>
+        <td><%= g.releaseYear %></td>
+        <td><%= g.ESRB %></td>
+        <td><%= g.devTeam %></td>
+        <td><%= g.console %></td>
+        <td><%= g.outNow ? 'Yes' : 'No' %></td>
+        <td>
+          <a href="/games/<%= g._id %>/edit"><button>Update Game</button></a>
+        </td>
+      </tr>
     <% }) %>
-    <!-- Close the forEach using EJS here -->
   </tbody>
 </table>
 
