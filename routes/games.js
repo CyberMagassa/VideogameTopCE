@@ -20,4 +20,8 @@ router.post('/', gamesCtrl.create);
 // PUT route for updating a game
 router.put('/:id', gamesCtrl.update);
 
+// DELETE route for deleting a game
+router.delete('/:id', gamesCtrl.delete);
+
+
 module.exports = router;

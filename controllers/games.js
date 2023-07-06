@@ -7,7 +7,17 @@ module.exports = {
   show,
   edit,
   update,
+  delete: deleteGame // Use 'delete' as the function name
 };
+
+async function deleteGame(req, res) {
+  try {
+    await Game.findByIdAndDelete(req.params.id);
+    res.redirect('/games');
+  } catch (err) {
+    res.render('games', { errorMsg: err.message });
+  }
+}
 
 async function update(req, res) {
   try {

@@ -26,6 +26,19 @@
           <a href="/games/<%= g._id %>/edit"><button>Update Game</button></a>
         </td>
       </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <form method="POST" action="/games/<%= g._id %>?_method=DELETE" onsubmit="return confirm('Are you sure you certain that you want to remove this game?')">
+            <button type="submit">Delete Game</button>
+          </form>
+        </td>
+      </tr>
     <% }) %>
   </tbody>
 </table>
