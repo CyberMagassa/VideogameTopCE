@@ -72,3 +72,4 @@ async function create(req, res) {
     res.render('games/new', { errorMsg: err.message });
   }
 }
+//Hello world//
